@@ -22,6 +22,9 @@ pipeline {
             }
         }
         stage('Deliver') {
+            when {
+                branch 'development'
+            }
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
